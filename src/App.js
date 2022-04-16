@@ -8,6 +8,7 @@ import Login from './components/Login/Login'
 import SignUp from './components/SignUp/SignUp'
 import Footer from './components/Shared/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
+import CheckOut from './components/CheckOut/CheckOut';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='*' element={<NotFound/>}/>
+        <Route path='/sevicedetail/'>
+            <Route path=':serviceId' element={<CheckOut/>} />
+        </Route>
       </Routes>
       <Footer/>
     </div>

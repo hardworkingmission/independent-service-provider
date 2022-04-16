@@ -1,44 +1,24 @@
 [
     {
         "id": 1,
-        "name": "ENGINE DIAGNOSTIC",
+        "name": "House Flower Photography",
         "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "description": "We have one of the biggest House Flower archive.Any one can use our photos for non commercial purpose.You can use our premium quility photos in your project.We also capture house yeard flower with our highly skilled click that will help you to build your own archive.",
+        "img": "house.jpg"
     },
     {
         "id": 2,
-        "name": "WHEEL ALIGNMENT",
+        "name": "Corporate Flower Photography",
         "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/tY8dmnP/2.jpg"
+        "description": "Corporate flower photography is our passion.We have one of the biggest Corporate Flower archive.Any one can use our photos for non commercial purpose.You can our premium quility photos to decorate your office.We also capture office yeard flower with our highly skilled click that will help you to build your own archive.",
+        "img": "corporate.jpg"
     },
     {
         "id": 3,
-        "name": "OIL CHANGING",
+        "name": "Wild Flower Photography",
         "price": "150",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/Yh04YVw/3.jpg"
-    },
-    {
-        "id": 4,
-        "name": "BRAKE REPARING",
-        "price": "180",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/ZX2Cbkn/4.jpg"
-    },
-    {
-        "id": 5,
-        "name": "WASH AND GLASSING",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/FgQ3jXp/5.jpg"
-    },
-    {
-        "id": 6,
-        "name": "COMPLETE ANALYSIS",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
-        "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+        "description": "Wild flower is unique that maximum people can not immagine.Our wild flower archive inispires people to be wild flower photographer.Any one can use our photos for non commercial purpose.You can use our premium quility photos any purpose.We also capture House yeard Wild flower with our highly skilled click that will help you to build your own archive.",
+        "img": "wild.jpg"
     }
+   
 ]

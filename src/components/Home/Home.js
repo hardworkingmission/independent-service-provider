@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import Services from '../Services/Services';
 
 const Home = () => {
     return (
@@ -7,8 +8,9 @@ const Home = () => {
             <section>
                 <Banner/>
             </section>
-            <section>
-                <h1 className='text-pink-600 text-4xl font-bold text-center'>Services</h1>
+            <section className='py-3'>
+                <h1 className='text-pink-600 text-4xl font-bold text-center my-2'>Services</h1>
+                <Services/>
             </section>
             
         </div>
