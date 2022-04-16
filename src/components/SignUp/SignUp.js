@@ -1,17 +1,42 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import google from '../../images/social-icons/google.png'
 import github from '../../images/social-icons/github.png'
+import {useCreateUserWithEmailAndPassword}from 'react-firebase-hooks/auth'
+import auth from '../../firebase.init'
 
 const SignUp = () => {
     const [state,setState]=useState({name:'',email:'',password:'',confirmPassword:''})
     const[agree,setAgree]=useState(false)
+    const [error,setError]=useState('')
+     
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        authError,
+      ] = useCreateUserWithEmailAndPassword(auth);
+      const navigate=useNavigate()
+      if(user){
+          navigate('/')
+      }
     const handleChange=(e)=>{
         setState({...state,[e.target.name]:e.target.value})
     }
+    const{name,email,password,confirmPassword}=state
     const createNewUser=(e)=>{
         e.preventDefault()
-        
+        if(password!==confirmPassword){
+            setError("Passwords haven't matched")
+            return;
+        }
+        if(password.length<6){
+            setError('Password Must be 6 or More charachers')
+            return;
+        }
+        createUserWithEmailAndPassword(email,password)
+        setError('')
+
     }
 
     return (
@@ -101,6 +126,8 @@ const SignUp = () => {
                         <label className="form-check-label inline-block text-gray-800" htmlFor="exampleCheck2">Remember me</label>
                     </div>
                     </div>
+                    <p className='text-red-600'>{error&&error}</p>
+                    <p className='text-red-600'>{authError&&authError}</p>
                     <button type="submit" className="
                     w-full
                     px-6
