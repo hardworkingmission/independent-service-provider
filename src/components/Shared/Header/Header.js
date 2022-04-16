@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import logo from '../../images/logo2.png'
+import { faSignIn } from '@fortawesome/free-solid-svg-icons'
+import CustomLink from '../../CustomLink/CustomLink';
+
 
 
 const Header = () => {
@@ -20,6 +21,7 @@ const Header = () => {
             text-gray-500
             hover:text-gray-700
             focus:text-gray-700
+            shadow-lg
             
             navbar navbar-expand-lg navbar-light
             ">
@@ -43,22 +45,25 @@ const Header = () => {
                 </svg>
                 </button>
                 <div className="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
-                <Link className="text-xl text-pink-600" to={'/'}>
+                <Link className="text-2xl font-bold text-pink-600" to={'/'}>
                     <h1 className=''>Flower Archive</h1>
                 </Link>
                 {/* <!-- Left links --> */}
-                <ul className="navbar-nav flex flex-col pl-0 list-style-none ml-auto">
-                <li className="nav-item px-2  my-3 md:m-0">
-                    <Link className="nav-link active" aria-current="page" to={'/cart'}>
-                        <FontAwesomeIcon icon={faCartShopping}/>
-                    </Link>
-                </li>
-                <li className="nav-item px-2 mb-3 md:m-0">
-                    <Link className="nav-link active" aria-current="page" to={'/login'}>Login</Link>
-                </li>
-                <li className="nav-item px-2  mb-3 md:m-0">
-                    <Link className="nav-link bg-red-600 py-2 px-2 rounded-2xl text-white" aria-current="page" to={'/signup'} >Signup</Link>
-                </li>
+                <ul className="navbar-nav flex flex-col pl-0 list-style-none ml-auto text-pink-600">
+                    <li className="nav-item px-2  my-3 md:m-0">
+                        <CustomLink className="nav-link active" to={'/about'}>
+                            About
+                        </CustomLink>
+                    </li>
+                    <li className="nav-item px-2 mb-3 md:m-0">
+                        <CustomLink className="nav-link active" aria-current="page" to={'/blogs'}>Blogs</CustomLink>
+                    </li>
+                    <li className="nav-item px-2  mb-3 md:m-0">
+                        <CustomLink className="nav-link py-2 px-2  text-white" aria-current="page" to={'/login'} >
+                            LogIn
+                            <FontAwesomeIcon className='ml-1' icon={faSignIn}/>
+                        </CustomLink>
+                    </li>
                 
                 </ul>
                 {/* <!-- Left links --> */}

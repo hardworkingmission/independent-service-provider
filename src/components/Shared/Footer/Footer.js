@@ -2,8 +2,11 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
-            <h1>footer</h1>
+        <div className='bg-pink-600 text-white font-bold text-lg'>
+            <div className="w-5/6 mx-auto flex justify-center">
+                <h1>footer</h1>
+            </div>
+           
         </div>
     );
 };
