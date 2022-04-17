@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {useSignInWithEmailAndPassword}from 'react-firebase-hooks/auth'
 import auth from '../../firebase.init';
 import SocialLogin from '../Shared/SocialLoin/SocialLogin';
@@ -14,15 +14,21 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+    const location=useLocation()
     const navigate=useNavigate()
+
+    //auth require and redirect after login
+    let from = location.state?.from?.pathname || "/";
     if(user){
-        navigate('/')
+        navigate(from,{replace:true})
     }
     
     const{email,password}=state
     const handleChange=(e)=>{
         setState({...state,[e.target.name]:e.target.value})
     }
+
+    //Sign in with email and password
     const handleSubmit=(e)=>{
         e.preventDefault()
         console.log(email,password)
