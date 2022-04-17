@@ -16,10 +16,11 @@ const SignUp = () => {
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
       const [updateProfile, updating, profileError] = useUpdateProfile(auth)
       const navigate=useNavigate()
-      if(user){
+
+    if(user){
         console.log(user)
           navigate('/')
-      }
+    }
     const handleChange=(e)=>{
         setState({...state,[e.target.name]:e.target.value})
     }
@@ -37,7 +38,6 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(email,password)
         await updateProfile({displayName:name})
         setError('')
-
     }
     
     return (
