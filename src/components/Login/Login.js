@@ -1,14 +1,32 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import {useSignInWithEmailAndPassword}from 'react-firebase-hooks/auth'
+import auth from '../../firebase.init';
 
 const Login = () => {
     const [state,setState]=useState({email:'',password:''})
     const [agree,setAgree]=useState(false)
+    //hooks
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+    const navigate=useNavigate()
+    if(user){
+        navigate('/')
+    }
+    
+    const{email,password}=state
     const handleChange=(e)=>{
-        setState({...state,[e.tagget.name]:e.target.value})
+        setState({...state,[e.target.name]:e.target.value})
     }
     const handleSubmit=(e)=>{
         e.preventDefault()
+        console.log(email,password)
+        signInWithEmailAndPassword(email,password)
+
     }
     return (
         <div className='w-5/6 mx-auto py-3 flex justify-center'>
@@ -31,7 +49,7 @@ const Login = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
-                        aria-describedby="emailHelp" placeholder="Enter email" onChange={handleChange}/>
+                        aria-describedby="emailHelp" placeholder="Enter email" name='email' onChange={handleChange} required/>
                     </div>
                     <div className="form-group mb-6">
                         <label htmlFor="exampleInputPassword2" className="form-label inline-block mb-2 text-gray-700">Password</label>
@@ -49,7 +67,7 @@ const Login = () => {
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputPassword2"
-                        placeholder="Password" name='password' onChange={handleChange}/>
+                        placeholder="Password" name='password' onChange={handleChange} required/>
                     </div>
                     
                     <div className="flex justify-between items-center mb-6">

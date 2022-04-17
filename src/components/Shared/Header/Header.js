@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignIn } from '@fortawesome/free-solid-svg-icons'
 import CustomLink from '../../CustomLink/CustomLink';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
     return (
      
         <nav className="
@@ -59,10 +63,14 @@ const Header = () => {
                         <CustomLink className="nav-link active" aria-current="page" to={'/blogs'}>Blogs</CustomLink>
                     </li>
                     <li className="nav-item px-2  mb-3 md:m-0">
-                        <CustomLink className="nav-link py-2 px-2  text-white" aria-current="page" to={'/login'} >
+                        {
+                            user?.uid?<button className='bg-pink-600 text-white font-bold py-1 px-2 rounded' onClick={()=>signOut(auth)}>Logout</button>:
+                            <CustomLink className="nav-link py-2 px-2  text-white" aria-current="page" to={'/login'} >
                             LogIn
                             <FontAwesomeIcon className='ml-1' icon={faSignIn}/>
-                        </CustomLink>
+                          </CustomLink>
+                        }
+                        
                     </li>
                 
                 </ul>

@@ -127,7 +127,7 @@ const SignUp = () => {
                     </div>
                     </div>
                     <p className='text-red-600'>{error&&error}</p>
-                    <p className='text-red-600'>{authError&&authError}</p>
+                    <p className='text-red-600'>{authError&&authError.message}</p>
                     <button type="submit" className="
                     w-full
                     px-6
