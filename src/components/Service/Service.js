@@ -23,7 +23,7 @@ const Service = ({service}) => {
                  <p>{description}</p>
             </div>
             <div className='mt-[50px]'>
-                <button className='w-full bg-pink-600 text-xl font-bold py-2 px-3 rounded-b-lg text-white absolute bottom-0' onClick={()=>navigate(`/sevicedetail/${id}`)}>Check Out</button>
+                <button className='w-full bg-pink-600 text-xl font-bold py-2 px-3 rounded-b-lg text-white absolute bottom-0' onClick={()=>navigate(`/sevicedetail/${id}`)}>Book Now</button>
             </div> 
         </div>
     );

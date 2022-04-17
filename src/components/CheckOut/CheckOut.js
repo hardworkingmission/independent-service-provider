@@ -33,7 +33,7 @@ const CheckOut = () => {
             <CustomModal closeModal={closeModal} modalIsOpen={modalIsOpen}>
             </CustomModal>
             <div className="lg:w-2/6 md:w-3/6 w-full p-6 rounded-lg shadow-lg bg-white ">
-            <h1 className='text-xl text-pink-600 font-bold my-1'>WelCome to Booking..!</h1>
+            <h1 className='text-xl text-pink-600 font-bold my-1'>WelCome to Check Out !</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group mb-2">
                         <label htmlFor="exampleInputName" className="form-label inline-block mb-2 text-gray-700">Your Name</label>
@@ -136,7 +136,7 @@ const CheckOut = () => {
                     active:bg-pink-800 active:shadow-lg
                     transition
                     duration-150
-                    ease-in-out" disabled={agree?false:true}>Confirm</button>
+                    ease-in-out" disabled={agree?false:true}>Check Out</button>
                     
                 </form>
                
