@@ -65,7 +65,7 @@ const Header = () => {
                     <li className="nav-item px-2  mb-3 md:m-0 flex items-center"> 
                             {
                                 user?.uid&&(
-                                    <div className='h-[35px] w-[35px] rounded-[50%] border border-2 flex justify-center items-center mr-2 bg-pink-600 text-white'> {user.displayName.slice(0,1).toUpperCase()}</div>
+                                    <div className='h-[35px] w-[35px] rounded-[50%] border border-2 flex justify-center items-center mr-2 bg-pink-600 text-white'> {user.displayName?.slice(0,1).toUpperCase()}</div>
                                 )
                                
                             }

@@ -116,7 +116,7 @@ const Login = () => {
                     transition
                     duration-150
                     ease-in-out" disabled={agree?false:true}>Login</button>
-                    <p className="text-gray-800 mt-6 text-center">Not Signup? <Link to={'/signup'}
+                    <p className="text-gray-800 mt-6 text-center">Not Signuped? <Link to={'/signup'}
                         className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">Sign Up</Link>
                     </p>
                 </form>
