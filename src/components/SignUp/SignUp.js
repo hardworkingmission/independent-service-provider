@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {useCreateUserWithEmailAndPassword}from 'react-firebase-hooks/auth'
+import {useCreateUserWithEmailAndPassword,useUpdateProfile}from 'react-firebase-hooks/auth'
 import auth from '../../firebase.init'
 import SocialLogin from '../Shared/SocialLoin/SocialLogin';
 const SignUp = () => {
@@ -13,16 +13,18 @@ const SignUp = () => {
         user,
         loading,
         authError,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+      const [updateProfile, updating, profileError] = useUpdateProfile(auth)
       const navigate=useNavigate()
       if(user){
+        console.log(user)
           navigate('/')
       }
     const handleChange=(e)=>{
         setState({...state,[e.target.name]:e.target.value})
     }
     const{name,email,password,confirmPassword}=state
-    const createNewUser=(e)=>{
+    const createNewUser=async(e)=>{
         e.preventDefault()
         if(password!==confirmPassword){
             setError("Passwords haven't matched")
@@ -32,11 +34,12 @@ const SignUp = () => {
             setError('Password Must be 6 or More charachers')
             return;
         }
-        createUserWithEmailAndPassword(email,password)
+        await createUserWithEmailAndPassword(email,password)
+        await updateProfile({displayName:name})
         setError('')
 
     }
-
+    
     return (
         <div className='w-5/6 mx-auto py-3 flex justify-center'>
             <div className=" lg:w-2/6 md:w-3/6 w-full p-6 rounded-lg shadow-lg bg-white ">
@@ -125,7 +128,7 @@ const SignUp = () => {
                     </div>
                     </div>
                     <p className='text-red-600'>{error&&error}</p>
-                    <p className='text-red-600'>{authError&&authError.message}</p>
+                    <p className='text-red-600'>{(authError&&authError.message)||(profileError&&profileError.message)}</p>
                     <button type="submit" className="
                     w-full
                     px-6

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import {useSignInWithEmailAndPassword}from 'react-firebase-hooks/auth'
+import {useSignInWithEmailAndPassword,useSendPasswordResetEmail}from 'react-firebase-hooks/auth'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import SocialLogin from '../Shared/SocialLoin/SocialLogin';
 
@@ -11,9 +13,10 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
-        loading,
+        emailLoading,
         authError,
       ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
     const location=useLocation()
     const navigate=useNavigate()
 
@@ -33,6 +36,12 @@ const Login = () => {
         e.preventDefault()
         console.log(email,password)
         signInWithEmailAndPassword(email,password)
+
+    }
+    //reset password
+    const handleResetPassword=()=>{
+        sendPasswordResetEmail(email)
+        toast("Sending ResetEmail!")
 
     }
     return (
@@ -84,9 +93,9 @@ const Login = () => {
                         id="exampleCheck2" onChange={()=>setAgree(!agree)}/>
                         <label className="form-check-label inline-block text-gray-800" htmlFor="exampleCheck2">Remember me</label>
                     </div>
-                    <a href="#!"
-                        className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">Forgot
-                        password?</a>
+                    <button
+                        className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out" onClick={handleResetPassword}>Forgot
+                        password?</button>
                     </div>
                     <p className='text-red-600'>{authError&&authError.message}</p>
                     <button type="submit" className="
@@ -112,6 +121,7 @@ const Login = () => {
                     </p>
                 </form>
                 <SocialLogin/>
+                <ToastContainer/>
             </div>
         </div>
     );
