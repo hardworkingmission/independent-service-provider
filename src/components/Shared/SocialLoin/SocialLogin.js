@@ -3,16 +3,18 @@ import { useSignInWithGoogle,useSignInWithGithub } from 'react-firebase-hooks/au
 import auth from '../../../firebase.init';
 import google from '../../../images/social-icons/google.png'
 import github from '../../../images/social-icons/github.png'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const SocialLogin = () => {
     //hooks
     const [signInWithGoogle, googleAuthUser, googleAuthLoading, googleAuthError] = useSignInWithGoogle(auth);
     const [signInWithGithub,githubAuthUser,githubAuthLoading,githubAuthError]=useSignInWithGithub(auth)
     const navigate=useNavigate()
+    const location=useLocation()
     
     //redirect after login
+    let from = location.state?.from?.pathname || "/";
     if(googleAuthUser||githubAuthUser){
-        navigate('/')
+        navigate(from,{replace:true})
     }
 
     //sign in with github and google
