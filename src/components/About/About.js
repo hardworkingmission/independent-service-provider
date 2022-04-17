@@ -1,5 +1,6 @@
 import React from 'react';
 import profilePhoto from '../../images/profile-photo/scaled.jpg'
+
 const About = () => {
     return (
         <div className='w-5/6 mx-auto md:flex'>
@@ -42,8 +43,7 @@ const About = () => {
                 <div>
                     <h1 className='text-2xl font-bold'>My Goal is to become a Full Stack Web Developer</h1>
                     <p>I am working as hard as possible to learn verious web technologies.I have choosen Javascript programming language for my primary carrier path.Using Javascript I have been solving verious web related problems.In a modern day, React js library is very popular of developing UI for single page application.It is a Javascript library for front-end devvelopment.I have been gathering mass knowledge about React js.My plan is be hands on react js within 6 months.Side by side I have been learing Node Js for back-end development and also learning SQL and NoSQL for Database Query.OverAll after 1 year of learning verious web technologies and developing many projects using these technologies, I will be FullStack Web Developer InshaAllah.</p>
-                </div>
-                
+                </div>  
             </div>
         </div>
     );
