@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import google from '../../images/social-icons/google.png'
-import github from '../../images/social-icons/github.png'
 import {useCreateUserWithEmailAndPassword}from 'react-firebase-hooks/auth'
 import auth from '../../firebase.init'
-
+import SocialLogin from '../Shared/SocialLoin/SocialLogin';
 const SignUp = () => {
     const [state,setState]=useState({name:'',email:'',password:'',confirmPassword:''})
     const[agree,setAgree]=useState(false)
@@ -150,15 +148,7 @@ const SignUp = () => {
                         className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">Login</Link>
                     </p>
                 </form>
-                <div className='flex items-center'>
-                    <div className='h-[2px] bg-pink-600 w-full'>
-                    </div>
-                    <p className='mx-1'>Or</p>
-                    <div className='h-[2px] bg-pink-600 w-full'>
-                    </div>
-                </div>
-                <button className='w-full px-6 py-2.5 bg-pink-600 text-white rounded flex items-center justify-center mb-2'><img src={google} alt="" className='mr-1 h-[30px] w-[30px] rounded-[50%]' />Continue with Google</button>
-                <button className='w-full px-6 py-2.5 bg-pink-600 text-white rounded flex items-center justify-center'><img src={github} alt="" className='mr-1 h-[30px] w-[30px] rounded-[50%]' />Continue with Github</button>
+                <SocialLogin/>
            </div>
         </div>
     );

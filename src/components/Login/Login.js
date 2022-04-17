@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {useSignInWithEmailAndPassword}from 'react-firebase-hooks/auth'
 import auth from '../../firebase.init';
+import SocialLogin from '../Shared/SocialLoin/SocialLogin';
 
 const Login = () => {
     const [state,setState]=useState({email:'',password:''})
@@ -103,6 +104,7 @@ const Login = () => {
                         className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">Sign Up</Link>
                     </p>
                 </form>
+                <SocialLogin/>
             </div>
         </div>
     );
