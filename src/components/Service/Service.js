@@ -13,8 +13,8 @@ const Service = ({service}) => {
     }
     const navigate=useNavigate()
     return (
-        <div className='col border border-2 rounded-lg relative'>
-            <div className="service-image"  onMouseEnter={()=>setOver('1.03')} onMouseLeave={()=>setOver('1')}>
+        <div className='col border border-2 rounded-lg relative' onMouseEnter={()=>setOver('1.03')} onMouseLeave={()=>setOver('1')}>
+            <div className="service-image"  >
                 <img src={process.env.PUBLIC_URL+`/service-images/${img}`} alt="" style={appStyle} className='rounded-t-lg'/>
             </div>
             <div className="service-info p-2 text-center">
