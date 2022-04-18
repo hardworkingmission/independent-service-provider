@@ -28,11 +28,11 @@ const SignUp = () => {
     const createNewUser=async(e)=>{
         e.preventDefault()
         if(password!==confirmPassword){
-            setError("Passwords haven't matched")
+            setError("Password and Confirm Password does not match")
             return;
         }
         if(password.length<6){
-            setError('Password Must be 6 or More charachers')
+            setError('Password Must Be 6 or More Characters')
             return;
         }
         await createUserWithEmailAndPassword(email,password)
