@@ -39,7 +39,7 @@ const SignUp = () => {
         await updateProfile({displayName:name})
         setError('')
     }
-    
+    console.log(user?.emailVerified)
     return (
         <div className='w-5/6 mx-auto py-3 flex justify-center'>
             <div className=" lg:w-2/6 md:w-3/6 w-full p-6 rounded-lg shadow-lg bg-white ">

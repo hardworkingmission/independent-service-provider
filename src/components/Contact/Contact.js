@@ -11,8 +11,8 @@ const Contact = () => {
                         <FontAwesomeIcon className='text-pink-600 text-5xl' icon={faHome}/>
                     </div>
                     <div className="address">
-                        <p className='text-xl font-bold'>VISIT US</p>
-                        <p>Please visit our Office.You are always welcomed</p>
+                        <p className='text-xl font-bold'>VISIT ME</p>
+                        <p>Please visit my Office.You are always welcomed</p>
                         <p className='italic text-pink-600 text-sm'>4118 Bee Street, Grand Rapids, Michigan, USA</p>
                     </div>
                 </div>
@@ -21,8 +21,8 @@ const Contact = () => {
                         <FontAwesomeIcon className='text-pink-600 text-5xl' icon={faPhone}/>
                     </div>
                     <div className="address">
-                        <p className='text-xl font-bold'>CALL US</p>
-                        <p>Please feel free to call us.You are always welcomed</p>
+                        <p className='text-xl font-bold'>CALL ME</p>
+                        <p>Please feel free to call me.You are always welcomed</p>
                         <p className='italic text-pink-600 text-sm'>Telephone- 231-844-9928, Mobile number- 616-774-2773</p>
                     </div>
                 </div>
@@ -31,8 +31,8 @@ const Contact = () => {
                         <FontAwesomeIcon className='text-pink-600 text-5xl' icon={faMessage}/>
                     </div>
                     <div className="address">
-                        <p className='text-xl font-bold'>MESSAGE US</p>
-                        <p>Please feel free to message us.You are always welcomed</p>
+                        <p className='text-xl font-bold'>MESSAGE ME</p>
+                        <p>Please feel free to message me.You are always welcomed</p>
                         <p className='italic text-pink-600 text-sm'>whatsup number-14000000, Email- abc@gmail.com</p>
                     </div>
                 </div>
